@@ -1,149 +1,248 @@
-* 
-{
-    font-family: 'Kdam Thmor Pro', sans-serif;
+@font-face {
+    font-family: derk;
+    src: url(derk.otf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300&family=Kdam+Thmor+Pro&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+} 
+
+html {
+    font-family: CormorantSC;
 }
-body
-{
-    overflow-x: hidden;
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
-header
-{
-    position: absolute;
-    top: 0;
-    left: 0;
+
+html {
+    font-family: CormorantSC;
+}
+
+.text-content {
+    background: rgba(0, 0, 0, 0);
+    display: grid;
+    place-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    filter: drop-shadow(0 0 8px rgb(255, 255, 255));
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+.text-content h2 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+.text-content a {
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 31px;
+    padding-left: 10px;
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+    display: flex;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(17, 17, 17);
+}
+
+.back {
     width: 100%;
-    padding: 30px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10000;
 }
-header .logo
-{   
-    padding: 10px 35px;
-    color: rgba(255, 255, 255, 0.254);
-    font-weight: 1000;
-    text-decoration: none;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
+#overlay-toggle {
+    position: absolute;
+    display: none;
 }
-header ul
-{
-    padding: 20px 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.overlay {
+    z-index: 1;
+    background-color: rgb(34, 0, 0);
 }
-header ul li
-{
-    margin-left: 10px;
-    display: inline-block;
-    position: relative;
+
+.overlay label {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vw;
+    color: rgb(255, 0, 0);
+    filter: drop-shadow(0 0 10px rgb(180, 67, 67));
+    font-size: 1.5rem;
 }
-header ul li a
-{
-    padding: 6px 15px;
-    color: rgb(49, 42, 189);
-    text-decoration: none;
-    font-size: 20px;
-}
-header ul li::after
-{
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: rgb(26, 23, 181);
+
+.no-hover {
     display: block;
-    margin: auto;
-    transition: 0.5s;
 }
-header ul li a.active
-{
-    transition: 0.5s;
-    background: rgb(5, 19, 148);
-    color:rgb(48, 104, 201);
+
+.hover {
+    display: none;
 }
-header ul li:hover::after
-{
-    width: 65%;
-}
-section
-{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    padding: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-section::before
-{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to top,#151186,#fff);
-}
-section img
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-}
-section img#mountains_front
-{
-    z-index: 10;
-}
-#text
-{
-    position: absolute;
-    right: -350px;
-    color: rgba(255, 255, 255, 0.599);
-    white-space: nowrap;
-    font-size: 7.5vw;
-    z-index: 9;
-}
-#btn
-{
-    text-decoration: none;
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 40px;
-    background: rgba(255, 255, 255, 0.599);
-    color: rgba(255, 255, 255, 0.444);
-    font-size: 1.5em;
-    z-index: 9;
-    transform: translateY(100px);
-}
-.text-box
-{
-    width: 90%;
-    color: rgb(83, 33, 170);
-    position: absolute;
+
+.fullscreen {
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+#by {
+    font-size: 13px;
+    margin-top: 900px;
+    margin-bottom: 10px;
+}
+
+.text-content {
+    background: transparent;
+    place-content: center;
     text-align: center;
+    color: rgb(255, 255, 255);
 }
-.text-box h1
-{
-    font-size: 62px;
+
+.text-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
 }
-.text-box h2
-{
-    margin: 10px 0 40px;
-    font-size: 14px;
-    color: rgb(92, 56, 168);
+
+.bg-video {
+    z-index: -1;
+}
+
+body {
+    font-family: CormorantSC !important;
+    background-color: rgb(0, 0, 0) !important;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+a:hover {
+    transition: .5s;
+    color: rgb(3, 3, 3);
+}
+
+span::before {
+    content: '\A';
+    white-space: pre
+}
+
+#cent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-shadow:
+    0 0 7px rgb(0, 0, 0),
+    0 0 10px #000,
+    0 0 21px rgb(254, 254, 254);
+    transform: translate(-50%, -50%);
+    font-size: 4.5rem;
+
+    color: rgb(0, 0, 0);
+}
+h1 {
+    animation: glow 0.50s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    100% {
+        text-shadow: 
+        0 0 4px #000,
+        0 0 11px #000,
+        0 0 19px #fff,
+        0 0 24px #fff;
+    }
+    0% {
+        text-shadow: 
+        0 0 4px #000,
+        0 0 10px #000,
+        0 0 18px #fff,
+        0 0 21px #fff;
+    }
+}
+
+.ul {
+    list-style: none;
+    font-family: 'CormorantSC', sans-serif;
+    color: rgb(134, 63, 162);
+}
+
+.nav-links {
+    position: absolute;
+    left: 11%;
+    top: 62%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-family: 'CormorantSC', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.nav-links li {
+    margin: 0 10px;
+    z-index: 200;
+    font-family: 'CormorantSC', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+#overlay-toggle:checked~.overlay {
+    animation-fill-mode: forwards;
+    animation-name: fade, hide;
+    animation-delay: 0s, 600ms;
+    animation-duration: 600ms, 1ms;
+}
+
+#overlay-toggle:checked~.overlay label {
+    animation-fill-mode: forwards;
+    animation-name: fade;
+    animation-delay: 0s;
+    animation-duration: 500ms;
+}
+
+@media(hover: hover) {
+    .hover {
+        display: block;
+    }
+    .no-hover {
+        display: none;
+    }
+}
+
+@keyframes fade {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hide {
+    to {
+        visibility: hidden;
+    }
 }
